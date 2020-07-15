@@ -1,22 +1,23 @@
 (function(){
 	'use strict';
 
-	let div = document.getElementById('img');
+	let divImg = document.getElementById('img');
+	let quadro = document.getElementById('quadro');
+	let legenda = document.getElementById('legenda');
 
-	let imgUm = new Image();
-	let imgDois = new Image();
-	let imgTres = new Image();
+	divImg.width = 300;
+	divImg.height = 300;
 
-	imgUm.src = './images/um.jpg';
-	imgDois.src = './images/dois.jpg';
-	imgTres.src = './images/tres.png';
+	divImg.src = './images/tres.png';
 
-	function teste(){
-		return div.textContent = 'imagem carregada';
-	};
 
-	imgTres.addEventListener('onload', teste);
+	function ola(){
+		legenda.textContent = 'Imagem carregada';
+	}
+
+	divImg.onload = ola;
 
 	
+
 
 })();
