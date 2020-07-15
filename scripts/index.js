@@ -12,12 +12,16 @@
 	imgTres.src = './images/tres.png';
 
 	function teste(msg){
-		div.textContent += msg + '<br>';
+		return div.textContent += msg + '<br>';
 	};
 
-	imgUm.onLoad = teste('Imagem UM carregada');
-	imgDois.onLoad = teste('Imagem Dois carregada');
-	imgTres.onLoad = teste('Imagem Tres carregada');
+	imgTres.decode()
+		.then(() => {
+			div.textContent = teste('Imagem TRES carregada');
+		})
+		.catch((encodingError) => {
+			// Do something with the error.
+		})
 
 	
 
